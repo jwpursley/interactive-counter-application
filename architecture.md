@@ -1,0 +1,5 @@
+Architectural anchor.\:
+
+currentCount
+
+history
