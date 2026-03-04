@@ -1,4 +1,5 @@
-let count = 0;
+let count = localStorage.getItem("count") || 0;
+count = Number(count);
 
 const countDisplay = document.getElementById("count");
 
@@ -8,6 +9,8 @@ const resetBtn = document.getElementById("reset");
 
 function updateDisplay() {
     countDisplay.textContent = count;
+
+    localStorage.setItem("count", count);
 
     if (count > 0) {
         countDisplay.style.color = "green";
@@ -32,3 +35,5 @@ resetBtn.addEventListener("click", function () {
     count = 0;
     updateDisplay()
 });
+
+updateDisplay();
